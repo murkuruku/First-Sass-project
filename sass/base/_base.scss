@@ -1,0 +1,14 @@
+
+*,
+*::after,
+*::before{ /* Padarome, kad ir kokia narsykle isijungsi viskas bus tiap pat nunulinta*/
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%; /* kad galetume naudoti rem ir po to lengvai keisti size  cia root element. default font-size yra 16 px todel padrom procentais ir pagal default skaiciuoja*/
+}
+body{
+    box-sizing: border-box;
+}

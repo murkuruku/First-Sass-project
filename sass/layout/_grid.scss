@@ -1,0 +1,42 @@
+.row{
+    max-width: $grind-width;
+    
+    margin: 0 auto; /* center block elements in other block element*/
+    // .row:not()  psiaudo klase ant rou class , reiskia paimk viska iskyrus paskutini viaka 
+    &:not(:last-child){
+        margin-bottom: $gutter-vertical;
+    } 
+
+    @include clearfix;
+
+     // selectina atribuna koki nori ir jo reiksme pvz atribute class ir jos reiksme kuri lygu kazkam visus tuos paselektins , gali buti atributas belekoks atl="logo". Po atributo galima ^ * $ zenklai kurie reikstu kad to atributo reiksmes pradzia sutinak su prasytu zodziu arba tas atributas turi tokias raidas savo reikmeje arba kad galas atributo sutinka.
+    [class^="col-"]{
+       
+        float: left;
+        
+        &:not(:last-child){
+            margin-right: $gutter-horizontal;
+        }
+    } 
+
+    .col-1-of-2{
+        width: calc((100% - #{$gutter-horizontal})/2);
+       
+    }
+    .col-1-of-3{
+        width:calc((100% - #{$gutter-horizontal} * 2)/3);
+     
+    }
+    .col-2-of-3{
+        width: calc((100% - #{$gutter-horizontal} *2)/3*2  + #{$gutter-horizontal} );
+    }
+    .col-1-of-4{
+        width: calc((100% - #{$gutter-horizontal} * 3 )/4);
+    }
+    .col-2-of-4{
+        width: calc((100% - #{$gutter-horizontal} * 3)/2 + #{$gutter-horizontal});
+    }
+    .col-3-of-4{
+        width: calc((100% - #{$gutter-horizontal} * 3)/4*3 + #{$gutter-horizontal} * 2);
+    }
+}
